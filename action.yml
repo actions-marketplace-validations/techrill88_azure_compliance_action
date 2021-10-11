@@ -22,5 +22,5 @@ runs:
   steps:
     - run: echo Hello Started.
       shell: bash   
-    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }}
+    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.Azure_subscriptionId }} ${{ inputs.Azure_clientId }} ${{ inputs.Azure_clientSecret }} ${{ inputs.Azure_tenantId }}
       shell: bash
