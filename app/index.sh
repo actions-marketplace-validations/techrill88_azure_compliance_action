@@ -1,5 +1,5 @@
 echo "Goodbye"
-curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
+curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec --chef-license accept-silent
 export AZURE_SUBSCRIPTION_ID= $Azure_subscriptionId
 export AZURE_CLIENT_ID=$Azure_clientId
 export AZURE_CLIENT_SECRET=$Azure_clientSecret
