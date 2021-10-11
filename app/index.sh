@@ -1,7 +1,7 @@
 
-echo "Goodbye"
+echo "Goodbye  : $1 "
 curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
-cp -r ${{ github.action_path }}/app/inspec-azure-check-profile .
+cp -r $1/app/inspec-azure-check-profile .
 
 export AZURE_SUBSCRIPTION_ID= $Azure_subscriptionId
 export AZURE_CLIENT_ID=$Azure_clientId
