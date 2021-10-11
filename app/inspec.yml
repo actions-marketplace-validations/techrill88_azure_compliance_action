@@ -1,0 +1,22 @@
+name: inspec-azure-check-profile
+title: InSpec Azure Checker Profile
+maintainer: ambilykk
+copyright: Apache MIT
+copyright_email: test@domain.com
+license: Apache-2.0
+summary: An InSpec Azure Profile Demo
+version: 0.1.0
+depends:
+  - name: inspec-azure
+    url: https://github.com/inspec/inspec-azure/archive/master.tar.gz
+
+  - name: linux-baseline
+    url: https://github.com/dev-sec/linux-baseline
+  - name: ssh-baseline
+    url: https://github.com/dev-sec/ssh-baseline
+  - name: windows-baseline
+    url: https://github.com/dev-sec/windows-baseline
+    
+
+supports:
+  platform: azure

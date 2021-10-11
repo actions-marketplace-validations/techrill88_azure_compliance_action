@@ -1,21 +1,21 @@
 name: 'Azure Compliance Checker'
 description: 'Azure Compliance Testing Action using Chef Inspec, Dev-Sec and Inspec-Azure'
+branding:
+  icon: 'alert-triangle'
+  color: 'gray-dark'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  Azure_subscriptionId: 
+    description: 'Azure Subscription ID'
     required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  Azure_clientId:
+    description: 'Azure Client ID'
+    required: true
+  Azure_clientSecret:
+    description: 'Azure Client Secret'
+    required: true
+  Azure_tenantId:
+    description: 'Azure Tenant ID'
+    required: true
 runs:
-  using: "composite"
-  steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/app/index.sh
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
