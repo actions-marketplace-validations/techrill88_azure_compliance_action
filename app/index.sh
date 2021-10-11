@@ -9,7 +9,7 @@ export AZURE_CLIENT_SECRET=$Azure_clientSecret
 export AZURE_TENANT_ID=$Azure_tenantId
 
 #REM inspec exec . -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
-inspec check inspec-azure-check-profile
+inspec check inspec-azure-check-profile --chef-license accept-silent
 inspec exec inspec-azure-check-profile -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
 
 #REM inspec exec inspec.yml -t azure:// https://github.com/dev-sec/ssl-baseline --reporter cli junit:testresults.xml html:report.html
