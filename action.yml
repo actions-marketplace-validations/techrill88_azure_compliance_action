@@ -16,6 +16,11 @@ inputs:
   Azure_tenantId:
     description: 'Azure Tenant ID'
     required: true
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+runs: 
+  using: "composite"
+
+  steps:
+    - run: echo Hello Started.
+      shell: bash   
+    - run: ${{ github.action_path }}/app/index.sh
+      shell: bash
