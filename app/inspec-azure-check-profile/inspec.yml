@@ -10,12 +10,6 @@ inspec_version: '>= 2.2.7'
 depends:
 - name: inspec-azure
   url: https://github.com/inspec/inspec-azure/archive/refs/tags/v1.75.9.tar.gz
-- name: linux-baseline
-  url: https://github.com/dev-sec/linux-baseline
-- name: ssh-baseline
-  url: https://github.com/dev-sec/ssh-baseline
-- name: windows-baseline
-  url: https://github.com/dev-sec/windows-baseline
 
 supports:
 - platform: azure
