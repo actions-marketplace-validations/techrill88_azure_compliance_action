@@ -22,5 +22,19 @@ runs:
   steps:
     - run: echo Hello Started.
       shell: bash   
-    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.Azure_subscriptionId }} ${{ inputs.Azure_clientId }} ${{ inputs.Azure_clientSecret }} ${{ inputs.Azure_tenantId }}
+    - name: Inspection of Azure
       shell: bash
+      run: |
+        echo "Good started"
+        curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
+        cp -r ${{ github.action_path }}/inspec-azure-check-profile .
+
+        export subscription_id= ${{ inputs.Azure_subscriptionId }}
+        export client_id=${{ inputs.Azure_clientId }}
+        export client_secret=${{ inputs.Azure_clientSecret }} 
+        export tenant_id=${{ inputs.Azure_tenantId }}
+
+        inspec check inspec-azure-check-profile --chef-license accept-silent
+        inspec exec inspec-azure-check-profile -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
+        
+        echo "Completed"
