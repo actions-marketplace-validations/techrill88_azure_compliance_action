@@ -1,4 +1,4 @@
-FROM inspec/inspec-azure
+FROM alpine:3.10
 
 COPY app/index.sh /index.sh
 
