@@ -8,4 +8,4 @@ control 'azure-rg-exists' do
     describe azure_resource_groups do
         it { should exist }
     end
-emd
+end
