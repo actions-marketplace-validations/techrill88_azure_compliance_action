@@ -15,6 +15,10 @@ cp -r $1/app/inspec-azure-check-profile .
 #REM inspec check inspec-azure-check-profile --chef-license accept-silent
 inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent
 
+inspec exec https://github.com/dev-sec/ssl-baseline -t azure:// --chef-license accept-silent
+inspec exec https://github.com/dev-sec/windows-baseline -t azure:// --chef-license accept-silent
+
+
 #REM inspec exec inspec.yml -t azure:// https://github.com/dev-sec/ssl-baseline --reporter cli junit:testresults.xml html:report.html
 
 #REM :tenant_id, :client_id, :client_secret, :subscription_id
