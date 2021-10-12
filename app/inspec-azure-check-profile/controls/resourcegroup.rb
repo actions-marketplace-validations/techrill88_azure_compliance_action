@@ -1,5 +1,5 @@
-control 'azurerm_resource_groups' do
-    describe azurerm_resource_groups do
-        its('names') { should include 'RG-Core' }
+control 'azure_resource_groups' do
+    describe azure_resource_groups do
+        its('names')  { should include 'rg-core' }
     end
-  end
+end
