@@ -3,7 +3,7 @@ description: 'Azure Compliance Testing Action using Chef Inspec, Dev-Sec and Ins
 branding:
   icon: 'alert-triangle'
   color: 'gray-dark'
-secrets:
+inputs:
   Azure_subscriptionId: 
     description: 'Azure Subscription ID'
     required: true
@@ -29,10 +29,14 @@ runs:
         curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
         cp -r ${{ github.action_path }}/inspec-azure-check-profile .
 
-        export subscription_id= ${{ secrets.Azure_subscriptionId }}
-        export client_id=${{ secrets.CLIENTID }}
-        export client_secret=${{ secrets.CLIENT_SECRET }} 
-        export tenant_id=${{ secrets.TENANTID }}
+        echo "${{ inputs.Azure_subscriptionId }}"
+        echo "$inputs.Azure_subscriptionId"
+        echo "$Azure_subscriptionId"
+
+        export subscription_id= "${{ inputs.Azure_subscriptionId }}"
+        export client_id=${{ inputs.Azure_clientId }}
+        export client_secret=${{ inputs.Azure_clientSecret }} 
+        export tenant_id=${{ inputs.Azure_tenantId }}
 
         inspec check inspec-azure-check-profile --chef-license accept-silent
         inspec exec inspec-azure-check-profile -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
