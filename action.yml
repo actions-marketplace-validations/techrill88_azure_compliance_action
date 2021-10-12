@@ -29,7 +29,8 @@ runs:
         curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
         cp -r ${{ github.action_path }}/inspec-azure-check-profile .
 
-        echo "${{ inputs.Azure_subscriptionId }}"
+        echo INPUTS_AZURE_SUBSCRIPTIONID
+        echo $INPUTS_AZURE_SUBSCRIPTIONID
         echo "$inputs.Azure_subscriptionId"
         echo "$Azure_subscriptionId"
 
