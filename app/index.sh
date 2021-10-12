@@ -7,10 +7,10 @@ echo $INPUT_SUBSCRIPTION_ID
 curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
 cp -r $1/app/inspec-azure-check-profile .
 
-export subscription_id= $INPUT_SUBSCRIPTION_ID
-export client_id=$INPUT_CLIENT_ID
-export client_secret=$4
-export tenant_id=$5
+$env:AZURE_SUBSCRIPTION_ID=$INPUT_SUBSCRIPTION_ID
+$env:AZURE_CLIENT_ID=$3
+$env:AZURE_CLIENT_SECRET=$4
+$env:AZURE_TENANT_ID=$5
 
 #REM inspec exec . -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
 inspec check inspec-azure-check-profile --chef-license accept-silent
