@@ -33,7 +33,7 @@ runs:
 
         echo completed
       
-    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} 
+    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.tenantId }} ${{ inputs.clientSecret }}
       shell: bash
 
       
