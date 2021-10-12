@@ -27,7 +27,10 @@ runs:
       shell: bash
       run: |
         export subscription_id = ${{ inputs.subscriptionId }}
-        echo $subscription_id
+        export client_id = ${{ inputs.client_id }}
+        export client_secret = ${{ inputs.client_secret }}
+        export tenant_id = ${{ inputs.tenant_id }}
+        echo completed
       
     - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.clientSecret }} ${{ inputs.tenantId }}
       shell: bash
