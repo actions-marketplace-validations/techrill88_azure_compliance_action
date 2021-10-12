@@ -12,3 +12,4 @@ control "azure-virtual-machines-exist-check" do                                #
     end
   end
 end
+
