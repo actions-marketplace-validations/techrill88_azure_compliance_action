@@ -25,6 +25,7 @@ runs:
     
     - run: |
         export subscription_id = ${{ inputs.subscriptionId }}
+        printenv | grep subscription_id
 
       shell: bash
     
