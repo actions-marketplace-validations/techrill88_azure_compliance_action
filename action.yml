@@ -25,14 +25,15 @@ runs:
 
     - name: Environment setting
       shell: bash
-      run: |
-        export subscription_id=${{ inputs.subscriptionId }}
-        export client_id=${{ inputs.clientId }}
-        export client_secret=${{ inputs.clientSecret }}
-        export tenant_id=${{ inputs.tenantId }}
+      run: |       
+        export AZURE_SUBSCRIPTION_ID=${{ inputs.subscriptionId }}
+        export AZURE_CLIENT_ID=${{ inputs.clientId }}
+        export AZURE_TENANT_ID=${{ inputs.tenantId }}
+        export AZURE_CLIENT_SECRET=${{ inputs.clientSecret }}
+
         echo completed
       
-    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.clientSecret }} ${{ inputs.tenantId }}
+    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} 
       shell: bash
 
       
