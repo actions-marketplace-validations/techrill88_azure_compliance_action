@@ -24,15 +24,11 @@ runs:
       shell: bash   
     
     - run: |
-        export subscription_id = "${{ inputs.subscriptionId }}"
+        export subscription_id = ${{ inputs.subscriptionId }}
+
       shell: bash
     
     - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.clientSecret }} ${{ inputs.tenantId }}
       shell: bash
-      env:
-        subscription_id: ${{ inputs.subscriptionId }}
-        client_id: ${{ inputs.clientId }}
-        client_secret: ${{ inputs.clientSecret }} 
-        tenant_id: ${{ inputs.tenantId }}
 
       
