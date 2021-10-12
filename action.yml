@@ -30,7 +30,7 @@ runs:
         cp -r ${{ github.action_path }}/inspec-azure-check-profile .
 
         echo $INPUTS_SUBSCRIPTIONID
-        ECHO "$INPUTS_SUBSCRIPTIONID"
+        echo "$INPUTS_SUBSCRIPTIONID"
         echo "$inputs.Azure_subscriptionId"
         echo "$Azure_subscriptionId"
 
