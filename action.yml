@@ -4,16 +4,16 @@ branding:
   icon: 'alert-triangle'
   color: 'gray-dark'
 inputs:
-  Azure_subscriptionId: 
+  subscriptionId: 
     description: 'Azure Subscription ID'
     required: true
-  Azure_clientId:
+  clientId:
     description: 'Azure Client ID'
     required: true
-  Azure_clientSecret:
+  clientSecret:
     description: 'Azure Client Secret'
     required: true
-  Azure_tenantId:
+  tenantId:
     description: 'Azure Tenant ID'
     required: true
 runs: 
@@ -29,15 +29,15 @@ runs:
         curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
         cp -r ${{ github.action_path }}/inspec-azure-check-profile .
 
-        echo INPUTS_AZURE_SUBSCRIPTIONID
-        echo $INPUTS_AZURE_SUBSCRIPTIONID
+        echo $INPUTS_SUBSCRIPTIONID
+        ECHO "$INPUTS_SUBSCRIPTIONID"
         echo "$inputs.Azure_subscriptionId"
         echo "$Azure_subscriptionId"
 
-        export subscription_id= "${{ inputs.Azure_subscriptionId }}"
-        export client_id=${{ inputs.Azure_clientId }}
-        export client_secret=${{ inputs.Azure_clientSecret }} 
-        export tenant_id=${{ inputs.Azure_tenantId }}
+        export subscription_id= "$INPUTS_SUBSCRIPTIONID"
+        export client_id=${{ inputs.clientId }}
+        export client_secret=${{ inputs.clientSecret }} 
+        export tenant_id=${{ inputs.tenantId }}
 
         inspec check inspec-azure-check-profile --chef-license accept-silent
         inspec exec inspec-azure-check-profile -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
