@@ -1,15 +1,14 @@
 
 echo "Goodbye  : $1 "
 
-echo ${{ inputs.subscription_id }} 
 echo $INPUT_SUBSCRIPTION_ID
 
 
 curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
 cp -r $1/app/inspec-azure-check-profile .
 
-export subscription_id= $2
-export client_id=$3
+export subscription_id= $INPUT_SUBSCRIPTION_ID
+export client_id=$INPUT_CLIENT_ID
 export client_secret=$4
 export tenant_id=$5
 
