@@ -26,7 +26,7 @@ runs:
     - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.tenantId }} ${{ inputs.clientSecret }}
       shell: bash
 
-     - run: echo Completed.
+    - run: echo Completed.
       shell: bash   
 
 
