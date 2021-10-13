@@ -20,20 +20,14 @@ runs:
   using: "composite"
 
   steps:
-    - run: echo Hello Started.
+    - run: echo Started.
       shell: bash   
 
-    - name: Environment setting
-      shell: bash
-      run: |       
-        export AZURE_SUBSCRIPTION_ID=${{ inputs.subscriptionId }}
-        export AZURE_CLIENT_ID=${{ inputs.clientId }}
-        export AZURE_TENANT_ID=${{ inputs.tenantId }}
-        export AZURE_CLIENT_SECRET=${{ inputs.clientSecret }}
-
-        echo completed
-      
     - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.tenantId }} ${{ inputs.clientSecret }}
       shell: bash
+
+     - run: echo Completed.
+      shell: bash   
+
 
       
