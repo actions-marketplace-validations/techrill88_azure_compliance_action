@@ -16,7 +16,7 @@ cp -r $1/app/inspec-azure-check-profile .
 #REM inspec check inspec-azure-check-profile --chef-license accept-silent
 inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent
 
-if [! -z "$test_file_name" ]
+if [ ! -z "$test_file_name" ]
 then
     inspec exec $test_file_name -t azure:// --chef-license accept-silent
 fi
