@@ -9,9 +9,12 @@ export AZURE_CLIENT_SECRET=$5
 curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec 
 cp -r $1/app/inspec-azure-check-profile .
 
+# copy the test file to controls folder before verification
+if [ ! -z "$6" ]
+then
+    cp $6 ./inspec-azure-check-profile/controls/test.rb
+fi
 
-#REM inspec exec . -t azure:// --reporter cli junit:testresults.xml html:report.html --chef-license accept-silent
-#REM inspec check inspec-azure-check-profile --chef-license accept-silent
 inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent
 
 echo "test file"
