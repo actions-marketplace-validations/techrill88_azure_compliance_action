@@ -19,5 +19,6 @@ echo $6
 
 if [ ! -z "$6" ]
 then
-    inspec exec $6 -t azure:// --chef-license accept-silent
+    cp $6 ./test.rb
+    inspec exec ./test.rb -t azure:// --chef-license accept-silent
 fi
