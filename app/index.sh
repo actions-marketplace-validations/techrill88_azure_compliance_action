@@ -1,5 +1,5 @@
 
-echo "Goodbye  : $1 "
+echo "Start Execution"
 
 export AZURE_SUBSCRIPTION_ID=$2
 export AZURE_CLIENT_ID=$3
@@ -16,7 +16,7 @@ cp -r $1/app/inspec-azure-check-profile .
 #REM inspec check inspec-azure-check-profile --chef-license accept-silent
 inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent
 
-if [$test_file_name]
+if [! -z "$test_file_name" ]
 then
     inspec exec $test_file_name -t azure:// --chef-license accept-silent
 fi
