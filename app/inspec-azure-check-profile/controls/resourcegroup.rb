@@ -11,5 +11,10 @@ control "azure-virtual-machines-exist-check" do                                #
         it { should exist } # The test itself.
       end
     end
+    
+    describe azure_virtual_machine(resource_group: 'rg-core', name: 'workvm') do
+        it { should have_only_approved_extensions(['ApprovedExtension', 'OtherApprovedExtensions']) }
+    end
+    
   end
   
