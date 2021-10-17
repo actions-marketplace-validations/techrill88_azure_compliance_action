@@ -1,5 +1,5 @@
-name: inspec-azure-check-profile
-title: InSpec Azure Checker Profile
+name: inspec-azure-profile-sample
+title: InSpec Azure Profile sample
 maintainer: ambilykk
 copyright: Apache MIT
 copyright_email: test@domain.com
