@@ -1,7 +1,6 @@
 
 echo "azure_compliance-action execution started"
 
-echo $INPUT_COMPLIANCE_TEST_PROFILE_URL
 # export the values as environment variables
 export AZURE_SUBSCRIPTION_ID=$2
 export AZURE_CLIENT_ID=$3
@@ -13,9 +12,9 @@ curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
 
 # execute the compliance tests from the profile, if available. 
 # Otherwise, execute the sample available as part of the action
-if [ ! -z "$6" ]
+if [ ! -z "$INPUT_COMPLIANCE_TEST_PROFILE_URL" ]
 then    
-    inspec exec $6 -t azure:// --chef-license accept-silent
+    inspec exec $INPUT_COMPLIANCE_TEST_PROFILE_URL -t azure:// --chef-license accept-silent
 else
     cp -r $1/app/inspec-azure-check-profile .
     inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent
