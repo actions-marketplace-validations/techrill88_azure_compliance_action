@@ -2,7 +2,7 @@ name: 'Azure Compliance Checker'
 description: 'Azure Compliance Testing Action using Chef Inspec, Dev-Sec and Inspec-Azure'
 branding:
   icon: 'alert-triangle'
-  color: 'gray-dark'
+  color: 'orange'
 inputs:
   subscriptionId: 
     description: 'Azure Subscription ID'
@@ -28,6 +28,8 @@ runs:
 
     - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.tenantId }} ${{ inputs.clientSecret }} ${{ inputs.compliance_test_profile_url }}
       shell: bash
+      env:
+        INPUT_COMPLIANCE_TEST_PROFILE_URL: ${{ inputs.compliance_test_profile_url }}
 
     - run: echo Completed.
       shell: bash   
