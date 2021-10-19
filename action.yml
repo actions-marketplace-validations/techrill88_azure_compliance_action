@@ -23,15 +23,20 @@ runs:
   using: "composite"
 
   steps:
-    - run: echo Started.
+    - run: echo "azure_compliance-action execution started"
       shell: bash   
 
-    - run: ${{ github.action_path }}/app/index.sh ${{ github.action_path }} ${{ inputs.subscriptionId }} ${{ inputs.clientId }} ${{ inputs.tenantId }} ${{ inputs.clientSecret }} ${{ inputs.compliance_test_profile_url }}
+    - run: ${{ github.action_path }}/app/index.sh  
       shell: bash
       env:
+        INPUT_ACTION_PATH: ${{ github.action_path }}
+        INPUT_SUBSCRIPTIONID: ${{ inputs.subscriptionId }}
+        INPUT_CLIENTID: ${{ inputs.clientId }}
+        INPUT_TENANTID: ${{ inputs.tenantId }}
+        INPUT_CLIENTSECRET: ${{ inputs.clientSecret }}
         INPUT_COMPLIANCE_TEST_PROFILE_URL: ${{ inputs.compliance_test_profile_url }}
 
-    - run: echo Completed.
+    - run: echo  "azure_compliance-action execution completed"
       shell: bash   
 
 
