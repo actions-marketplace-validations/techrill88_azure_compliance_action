@@ -23,7 +23,7 @@ runs:
   using: "composite"
 
   steps:
-    - run: echo "azure_compliance-action execution started"
+    - run: echo "azure_compliance_action execution started"
       shell: bash   
 
     - run: ${{ github.action_path }}/app/index.sh  
@@ -36,7 +36,7 @@ runs:
         INPUT_CLIENTSECRET: ${{ inputs.clientSecret }}
         INPUT_COMPLIANCE_TEST_PROFILE_URL: ${{ inputs.compliance_test_profile_url }}
 
-    - run: echo  "azure_compliance-action execution completed"
+    - run: echo  "azure_compliance_action execution completed"
       shell: bash   
 
 

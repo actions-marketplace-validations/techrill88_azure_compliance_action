@@ -1,4 +1,4 @@
-# azure_compliance-action
+# azure_compliance_action
 
 This GitHub action helps in integrating Azure Compliance Testing as part of the CICD pipeline setup using GitHub. This action is based on [Chef Inspec](https://docs.chef.io/inspec/) and [Inspec-Azure](https://github.com/inspec/inspec-azure)
 
@@ -50,7 +50,7 @@ Following is the sample code for integrating this action with your workflow
 ```
 steps:
       - uses: actions/checkout@v2
-      - uses: ambilykk/azure_compliance@main
+      - uses: ambilykk/azure_compliance_action@main
         with:
           subscriptionId: ${{secrets.AZURE_SUB}}
           clientId: ${{secrets.CLIENTID}}
