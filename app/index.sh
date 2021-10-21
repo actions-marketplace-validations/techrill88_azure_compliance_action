@@ -15,5 +15,5 @@ then
     inspec exec $INPUT_COMPLIANCE_TEST_PROFILE_URL -t azure:// --chef-license accept-silent
 else
     cp -r $INPUT_ACTION_PATH/app/inspec-azure-check-profile .
-    inspec exec inspec-azure-check-profile/ -t azure:// --chef-license accept-silent --reporter html2:./compliance.html
+    inspec exec inspec-azure-check-profile/ -t azure:// --reporter html2:test/compliance.html --chef-license accept-silent 
 fi
