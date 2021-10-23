@@ -16,8 +16,11 @@ Create an Azure Service Principal Account with a minimum of reader role assigned
 You should have the following pieces of information:
 
 TENANT_ID
+
 CLIENT_ID
+
 CLIENT_SECRET
+
 SUBSCRIPTION_ID
 
 Store all these details in your GitHub secret and refer as part of the workflow
