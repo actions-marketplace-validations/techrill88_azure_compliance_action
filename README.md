@@ -1,11 +1,11 @@
 # azure_compliance_action
 
-This GitHub action helps in integrating Azure Compliance Testing as part of the CICD pipeline setup using GitHub. This action is based on [Chef Inspec](https://docs.chef.io/inspec/) and [Inspec-Azure](https://github.com/inspec/inspec-azure)
+This GitHub action helps in integrating Azure Compliance Testing as part of the CICD pipeline setup using GitHub. This action is based on [Chef InSpec](https://docs.chef.io/inspec/) and [Inspec-Azure](https://github.com/inspec/inspec-azure)
 
 Compliance tests are separated from the GitHub action and passed as an optional parameter - compliance_test_profile_url
 You can skip this parameter to test your initial configuraiton.
 
-You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/ambilykk/inspec-azure-compliance-check) or use your own compliance test written using Chef Inspec. Pass the Inspec profile URL as a parameter, compliance_test_profile_url to the action.
+You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/ambilykk/inspec-azure-compliance-check) or use your own compliance test written using Chef InSpec. Pass the InSpec profile URL as a parameter, compliance_test_profile_url to the action.
 
 
 # How to Use the Action
