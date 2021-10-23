@@ -71,5 +71,7 @@ steps:
 | compliance_test_profile_url    | No | URL to the compliance test profile. `https://github.com/ambilykk/inspec-azure-compliance-check`    |
 
 
+#License
 
+The scripts and documentation in this project are released under the [MIT License](https://github.com/actions/download-artifact/blob/main/LICENSE)
 
