@@ -61,7 +61,7 @@ steps:
           clientId: ${{secrets.CLIENTID}}
           clientSecret: ${{secrets.CLIENT_SECRET}}
           tenantId: ${{secrets.TENANTID}}
-          compliance_test_profile_url: 'https://github.com/ambilykk/inspec-azure-compliance-check'
+          compliance_test_profile_url: 'https://github.com/techrill88/inspec-azure-compliance-check'
           
 ```
 
