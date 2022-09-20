@@ -73,7 +73,7 @@ steps:
 | clientId                       | Yes | Azure Client Id; preferably from secrets                                      |
 | clientSecret                   | Yes | Azure Client Secret; preferably from secrets   |
 | tenantId                       | Yes | Azure Tenant Id; preferably from secrets                                   |
-| compliance_test_profile_url    | No | URL to the compliance test profile. `https://github.com/ambilykk/inspec-azure-compliance-check`    |
+| compliance_test_profile_url    | No | URL to the compliance test profile. `https://github.com/techrill88/inspec-azure-compliance-check`    |
 
 
 # License
