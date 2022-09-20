@@ -55,7 +55,7 @@ Following is the sample code for integrating this action with your workflow
 ```
 steps:
       - uses: actions/checkout@v2
-      - uses: ambilykk/azure_compliance_action@main
+      - uses: techrill88/azure_compliance_action@main
         with:
           subscriptionId: ${{secrets.AZURE_SUB}}
           clientId: ${{secrets.CLIENTID}}
