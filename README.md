@@ -5,7 +5,7 @@ This GitHub action helps in integrating Azure Compliance Testing as part of the 
 Compliance tests are separated from the GitHub action and passed as an optional parameter - compliance_test_profile_url
 You can skip this parameter to test your initial configuraiton.
 
-You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/ambilykk/inspec-azure-compliance-check) or use your own compliance test written using Chef InSpec. Pass the InSpec profile URL as a parameter, compliance_test_profile_url to the action.
+You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/techrill88/inspec-azure-compliance-check) or use your own compliance test written using Chef InSpec. Pass the InSpec profile URL as a parameter, compliance_test_profile_url to the action.
 
 ## Release
 GitHub Marketplace : https://github.com/marketplace/actions/azure-compliance-checker
