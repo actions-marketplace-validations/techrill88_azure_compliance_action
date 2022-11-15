@@ -5,7 +5,7 @@ This GitHub action helps in integrating Azure Compliance Testing as part of the 
 Compliance tests are separated from the GitHub action and passed as an optional parameter - compliance_test_profile_url
 You can skip this parameter to test your initial configuraiton.
 
-You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/techrill88/inspec-azure-compliance-check) or use your own compliance test written using Chef InSpec. Pass the InSpec profile URL as a parameter, compliance_test_profile_url to the action.
+You can use either the Azure Compliance tests defined at [inspec-azure-compliance-check](https://github.com/ambilykk/inspec-azure-compliance-check) or use your own compliance test written using Chef InSpec. Pass the InSpec profile URL as a parameter, compliance_test_profile_url to the action.
 
 ## Release
 GitHub Marketplace : https://github.com/marketplace/actions/azure-compliance-checker
@@ -55,13 +55,13 @@ Following is the sample code for integrating this action with your workflow
 ```
 steps:
       - uses: actions/checkout@v2
-      - uses: techrill88/azure_compliance_action@main
+      - uses: ambilykk/azure_compliance_action@main
         with:
           subscriptionId: ${{secrets.AZURE_SUB}}
           clientId: ${{secrets.CLIENTID}}
           clientSecret: ${{secrets.CLIENT_SECRET}}
           tenantId: ${{secrets.TENANTID}}
-          compliance_test_profile_url: 'https://github.com/techrill88/inspec-azure-compliance-check'
+          compliance_test_profile_url: 'https://github.com/ambilykk/inspec-azure-compliance-check'
           
 ```
 
@@ -73,7 +73,7 @@ steps:
 | clientId                       | Yes | Azure Client Id; preferably from secrets                                      |
 | clientSecret                   | Yes | Azure Client Secret; preferably from secrets   |
 | tenantId                       | Yes | Azure Tenant Id; preferably from secrets                                   |
-| compliance_test_profile_url    | No | URL to the compliance test profile. `https://github.com/techrill88/inspec-azure-compliance-check`    |
+| compliance_test_profile_url    | No | URL to the compliance test profile. `https://github.com/ambilykk/inspec-azure-compliance-check`    |
 
 
 # License
